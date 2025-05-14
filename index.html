@@ -5,165 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TandaPay Manual</title>
     <style>
-        body {
-            font-family: cabin , sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .page-header {
-            text-align: center;
-            padding: 30px 20px; /* Reduced padding slightly */
-            border-bottom: 2px solid #080808; /* Changed border to bottom only for cleaner section separation */
-            background-color: #f7b707;
-            margin-bottom: 5px;
-        }
-        .page-header h1 {
-            color: #000000;
-            font-size: 50px; /* Slightly reduced */
-            margin-bottom: 2px;
-        }
-        .page-header h2 {
-            color: #ec1249; /* Updated color */
-            font-size: 40px; /* Slightly reduced */
-            font-weight: normal;
-            margin-bottom: 15px;
-        }
-        .page-header p {
-            color: #333;
-            font-size: 15px;
-        }
+    body {
+        font-family: cabin, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        overflow-x: hidden; /* Prevent horizontal scroll on mobile */
+    }
 
-        .toc-section {
-            padding: 0 20px; /* Padding for TOC section */
-            margin-bottom: 30px;
-        }
-        .toc-section h1 {
-            color: #faba09;
-            border-bottom: 2px solid #faba09;
-            padding-bottom: 10px;
-            font-size: 24px;
-        }
-        .toc-section ul {
-            list-style-type: none;
-            padding-left: 0;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        .toc-section ul a {
-            text-decoration: none;
-            color: #070707;
-        }
-        .toc-section ul a:hover {
-            text-decoration: underline;
-        }
+    .page-header {
+        text-align: center;
+        padding: 30px 20px;
+        border-bottom: 2px solid #080808;
+        background-color: #f7b707;
+        margin-bottom: 5px;
+    }
 
-        /* Main section layout */
-        .main-section-container {
-            display: flex;
-            flex-direction: row; /* Default, items side-by-side */
-            gap: 20px; /* Space between text and image columns */
-            padding: 0 20px 20px 20px; /* Padding around the two-column layout */
-            margin-bottom: 30px; /* Space below each main section */
-            border-bottom: 1px solid #eee; /* Separator line between sections */
-        }
+    .page-header h1 {
+        color: #000000;
+        font-size: 50px;
+        margin-bottom: 2px;
+    }
 
-        .text-content {
-            width: 75%; /* Text takes up half the space */
-            padding-right: 10px; /* Small space before the gap starts */
-        }
+    .page-header h2 {
+        color: #ec1249;
+        font-size: 40px;
+        font-weight: normal;
+        margin-bottom: 15px;
+    }
 
-        .image-placeholder {
-            width: 25%; /* Image area takes up the other half */
-            padding-left: 10px; /* Small space after the gap ends */
-            border-left: 1px dashed #ccc; /* Optional visual separator for image area */
-            min-height: 300px; /* Ensure it has some height even if empty */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-color: #f9f9f9; /* Light background for image area */
-            text-align: center;
-            color: #777;
-        }
-        .image-placeholder img { /* Style for actual images you might add */
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-        }
+    .page-header p {
+        color: #333;
+        font-size: 15px;
+    }
 
-        .text-content h1 {
-            color: #faba09;
-            border-bottom: 2px solid #faba09;
-            padding-bottom: 10px;
-            font-size: 24px;
-            margin-top: 0; /* Remove default top margin for h1 inside flex item */
-        }
-        .text-content h2 {
-            color: #ca2c54; /* Updated from #0056b3 and #40bbd1 */
-            font-size: 20px;
-        }
-        .text-content h3 {
-            color: #ca2c54; /* Updated from #0056b3 and #40bbd1 */
-            font-size: 18px;
-        }
-        /* Specific h2/h3 that were #40bbd1 should also use #ca2c54 if that was the intent for section subheadings */
-        #introduction h2, #introduction h3,
-        #account-setup h2, #account-setup h3,
-        #gtn-strategy h2, #gtn-strategy h3,
-        #customer-engagement h2, #customer-engagement h3,
-        #support-feedback h2, #support-feedback h3 {
-            color: #40bbd1; /* Retaining original #40bbd1 for these specific sections as per prior code */
-        }
-        #contract h2, #contract h3,
-        #platform-walkthrough h2, #platform-walkthrough h3,
-        #checkins-training h2, #checkins-training h3,
-        #performance-tracking h2, #performance-tracking h3 {
-            color: #ca2c54; /* Ensuring these use #ca2c54 */
-        }
+    .toc-section {
+        padding: 0 20px;
+        margin-bottom: 30px;
+    }
 
+    .toc-section h1 {
+        color: #faba09;
+        border-bottom: 2px solid #faba09;
+        padding-bottom: 10px;
+        font-size: 24px;
+    }
 
-        .text-content p, .text-content ul, .text-content ol {
-            font-size: 15px;
-            margin-bottom: 1em;
-        }
-        .text-content ul, .text-content ol {
-            padding-left: 20px; /* Indent lists */
-        }
-        .text-content ul ul, .text-content ol ul { /* Nested lists */
-            margin-left: 20px;
-        }
-        a {
-      color: blue;
-      text-decoration: none;
+    .toc-section ul {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .toc-section ul a {
+        text-decoration: none;
+        color: #070707;
+    }
+
+    .toc-section ul a:hover {
+        text-decoration: underline;
+    }
+
+    .main-section-container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 0 20px 20px 20px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .text-content {
+        width: 75%;
+        padding-right: 10px;
+    }
+
+    .image-placeholder {
+        width: 25%;
+        padding-left: 10px;
+        border-left: 1px dashed #ccc;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #f9f9f9;
+        text-align: center;
+        color: #777;
+    }
+
+    .image-placeholder img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .text-content h1 {
+        color: #faba09;
+        border-bottom: 2px solid #faba09;
+        padding-bottom: 10px;
+        font-size: 24px;
+        margin-top: 0;
+    }
+
+    .text-content h2 {
+        color: #ca2c54;
+        font-size: 20px;
+    }
+
+    .text-content h3 {
+        color: #ca2c54;
+        font-size: 18px;
+    }
+
+    #introduction h2, #introduction h3,
+    #account-setup h2, #account-setup h3,
+    #gtn-strategy h2, #gtn-strategy h3,
+    #customer-engagement h2, #customer-engagement h3,
+    #support-feedback h2, #support-feedback h3 {
+        color: #40bbd1;
+    }
+
+    #contract h2, #contract h3,
+    #platform-walkthrough h2, #platform-walkthrough h3,
+    #checkins-training h2, #checkins-training h3,
+    #performance-tracking h2, #performance-tracking h3 {
+        color: #ca2c54;
+    }
+
+    .text-content p,
+    .text-content ul,
+    .text-content ol {
+        font-size: 15px;
+        margin-bottom: 1em;
+    }
+
+    .text-content ul,
+    .text-content ol {
+        padding-left: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-wrap: break-word;
+    }
+
+    .text-content ul ul,
+    .text-content ol ul {
+        margin-left: 20px;
+    }
+
+    a {
+        color: blue;
+        text-decoration: none;
     }
 
     a:hover {
-      text-decoration: underline;
+        text-decoration: underline;
     }
-        
-        
-        
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .main-section-container {
-                flex-direction: column; /* Stack text and image sections vertically */
-            }
-            .text-content,
-            
-            .image-placeholder {
-                width: 100%; /* Each takes full width when stacked */
-                padding-right: 0;
-                padding-left: 0;
-                border-left: none; /* Remove vertical separator on mobile */
-                margin-bottom: 20px;
-            }
-            .image-placeholder {
-                border-top: 1px dashed #ccc; /* Add top separator on mobile */
-            }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .main-section-container {
+            flex-direction: column;
         }
-    </style>
+
+        .text-content,
+        .image-placeholder {
+            width: 100%;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            margin-bottom: 20px;
+            border-left: none;
+        }
+
+        .image-placeholder {
+            border-top: 1px dashed #ccc;
+        }
+
+        .text-content {
+            margin: 0 !important;
+        }
+    }
+</style>
 </head>
 <body>
     <div class="page-header">
@@ -293,8 +319,8 @@
                         <li><strong>Passport Photo or Selfie:</strong> A clear, recent photo.</li>
                         <li><strong>(If a registered company):</strong> You might also need your Business Registration Certificate/Certificate of Incorporation, KRA PIN certificate, and proof of address.</li>
                         <li>
-                        <h3 style="color: #40bbd1;">Company Requirements</h3>
-<ul style="list-style-type: circle;">
+                            <h3 style="color: #40bbd1;">Company Requirements</h3>
+                            <ul style="list-style-type: circle;">
   <li><strong>CR12 Form</strong></li>
   <li><strong>Board Resolution:</strong> This should specify the individuals authorized to act as admins</li>
   <li><strong>Certificate of Incorporation</strong></li>
@@ -310,6 +336,7 @@
   <li><strong>Personal KRA PIN Certificate</strong></li>
   <li><strong>Copy of ID</strong></li>
 </ul>
+                        
                 </li>
                 <li>
                     <h3 style="color: #40bbd1;">Step 4: Account Verification & Till Number</h3>
