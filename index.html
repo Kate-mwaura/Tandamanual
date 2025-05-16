@@ -12,6 +12,7 @@
         line-height: 1.6;
         overflow-x: hidden; /* Prevent horizontal scroll on mobile */
     }
+    
 
     .page-header {
         text-align: center;
@@ -69,7 +70,7 @@
 
     .main-section-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: row; /* Default for desktop */
         gap: 20px;
         padding: 0 20px 20px 20px;
         margin-bottom: 30px;
@@ -78,12 +79,12 @@
 
     .text-content {
         width: 75%;
-        padding-right: 10px;
+        padding-right: 10px; /* space before placeholder border */
     }
 
     .image-placeholder {
         width: 25%;
-        padding-left: 10px;
+        padding-left: 10px; /* space after placeholder border */
         border-left: 1px dashed #ccc;
         min-height: 300px;
         display: flex;
@@ -93,6 +94,7 @@
         background-color: #f9f9f9;
         text-align: center;
         color: #777;
+
     }
 
     .image-placeholder img {
@@ -119,6 +121,9 @@
         color: #ca2c54;
         font-size: 18px;
     }
+    #terminologies strong {
+      color: #40bbd1;
+    }
 
     #introduction h2, #introduction h3,
     #account-setup h2, #account-setup h3,
@@ -131,9 +136,11 @@
     #contract h2, #contract h3,
     #platform-walkthrough h2, #platform-walkthrough h3,
     #checkins-training h2, #checkins-training h3,
-    #performance-tracking h2, #performance-tracking h3 {
+    #performance-tracking h2, #performance-tracking h3,
+    #script h2, #script h3 /* Added for script section color consistency */ {
         color: #ca2c54;
     }
+
 
     .text-content p,
     .text-content ul,
@@ -166,10 +173,10 @@
         text-decoration: underline;
     }
     img {
-  page-break-inside: avoid;
-  break-inside: avoid;
-}
-
+        page-break-inside: avoid;
+        break-inside: avoid;
+        }
+  
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .main-section-container {
@@ -179,20 +186,22 @@
         .text-content,
         .image-placeholder {
             width: 100%;
-            padding-right: 0 !important;
-            padding-left: 0 !important;
+            padding-right: 0 !important; /* Reset padding for column layout */
+            padding-left: 0 !important; /* Reset padding for column layout */
             margin-bottom: 20px;
-            border-left: none;
+            border-left: none; /* Remove left border on placeholder */
         }
 
         .image-placeholder {
-            border-top: 1px dashed #ccc;
+            border-top: 1px dashed #ccc; /* Add top border for separation */
+            min-height: 200px; /* Adjust min-height for mobile */
         }
 
         .text-content {
-            margin: 0 !important;
+            margin: 0 !important; /* Ensure no extra margins */
         }
     }
+    
 </style>
 </head>
 <body>
@@ -206,18 +215,21 @@
 
     <div class="toc-section">
         <h1 style="color: #0c0c0c; border-bottom: 2px solid #faba09; padding-bottom: 10px;"> Table of Contents</h1>
-<div style="background-color: #e1ece8;" >
-    <ul style="list-style-type: none; padding-left: 0; font-size: 20px; line-height: 1.8;">
-        <li><a href="#introduction" style="text-decoration: none; color: #070707;">1. Welcome to TandaPay</a> </li>
-        <li><a href="#contract" style="text-decoration: none; color: #070707;">2. Understanding Your TandaPay Agreement</a> </li>
-        <li><a href="#account-setup" style="text-decoration: none; color: #070707;">3. Getting Started: Setting Up Your TandaPay Merchant Account</a> </li>
-        <li><a href="#platform-walkthrough" style="text-decoration: none; color: #050505;">4. Navigating TandaPay: Platform & App Walkthrough</a> </li>
-        <li><a href="#gtn-strategy" style="text-decoration: none; color: #030303;">5. Your Go-To-Market Strategy: Focusing on High-Value Zones</a> </li>
-        <li><a href="#checkins-training" style="text-decoration: none; color: #070707;">6. Stay Ahead: Weekly Check-ins & Training</a> </li>
-        <li><a href="#customer-engagement" style="text-decoration: none; color: #070707;">7. Engaging Your Customers with TandaPay</a> </li>
-        <li><a href="#performance-tracking" style="text-decoration: none; color: #0a0a0a;">8. Tracking Your Success: Performance & Reporting</a> </li>
-        <li><a href="#support-feedback" style="text-decoration: none; color: #080808;">9. We're Here to Help: Support & Feedback</a> </li>
-    </ul>
+        <div style="background-color: #e1ece8;" >
+            <ul style="list-style-type: none; padding-left: 0; font-size: 20px; line-height: 1.8;">
+                <li><a href="#introduction" style="text-decoration: none; color: #070707;">1. Welcome to TandaPay</a> </li>
+                <li><a href="#terminologies" style="text-decoration: none; color: #070707;">2. Key Terminologies</a></li>
+                <li><a href="#script" style="text-decoration: none; color: #070707;">3. Client Engagement Scripts</a></li>
+                <li><a href="#contract" style="text-decoration: none; color: #070707;">4. Understanding Your TandaPay Agreement</a> </li>
+                <li><a href="#account-setup" style="text-decoration: none; color: #070707;">5. Compliance Essentials: KYC & AML Guidelines</a> </li>
+                <li><a href="#platform-walkthrough" style="text-decoration: none; color: #050505;">6. Navigating TandaPay: Platform & App Walkthrough</a> </li>
+                <li><a href="#gtn-strategy" style="text-decoration: none; color: #030303;">7. Your Go-To-Market Strategy: Focusing on High-Value Zones</a> </li>
+                <li><a href="#checkins-training" style="text-decoration: none; color: #070707;">8. Stay Ahead: Weekly Check-ins & Training</a> </li>
+                <li><a href="#customer-engagement" style="text-decoration: none; color: #070707;">9. Engaging Your Customers with TandaPay</a> </li>
+                <li><a href="#performance-tracking" style="text-decoration: none; color: #0a0a0a;">10. Tracking Your Success: Performance & Reporting</a> </li>
+                <li><a href="#support-feedback" style="text-decoration: none; color: #080808;">11. We're Here to Help: Support & Feedback</a> </li>
+            </ul>
+        </div>
     </div>
 
     <!-- Section 1: Introduction -->
@@ -241,17 +253,105 @@
             <p>Let's get started on your path to success with TandaPay!</p>
         </div>
         <div class="image-placeholder">
-            
-            <img src="./images/welcome.png" alt="">
-            <h1 style="background-color: #40bbd1 color(srgb red green rgb(230, 16, 148));">WELCOME TO TANDAPAY</h1>
-            <p><em></em></p>
-            <!-- Example: <img src="welcome-image.jpg" alt="Welcome to TandaPay"> -->
+            <img src="./images/welcome.png" alt="Welcome illustration">
+           <h4 style="background-color: #ffffff; color: #faba09;">WELCOME TO TANDAPAY</h4>
+           
         </div>
     </div> 
-    <!-- Section 2: Contract -->
+
+    <!-- Section 2: Key Terminologies -->
+    <div class="main-section-container">
+        <div class="text-content" id="terminologies">
+            <h1>2. Key Terminologies</h1>
+            <ul style="list-style-type: disc; font-size: 15px; line-height: 1.8; padding-left: 20px;">
+                <li><strong>TandaPay:</strong> A mobile-based financial platform offering payment solutions (mobile wallet, in-game purchases, subscriptions, bill payments, money transfers) for businesses and individuals.</li>
+                <li><strong>Agent:</strong> A business entity or individual facilitating TandaPay transactions (deposits, withdrawals, bill payments, airtime purchases) on behalf of customers for a commission. Uses Tanda Pay App or <code>*712#</code>.</li>
+                <li><strong>Merchant:</strong> A business (e.g., gaming, e-commerce, FMCG, retail dukas, services) that uses TandaPay to accept payments from customers and make payments to suppliers. Uses Tanda Trader App or <code>*712#</code>.</li>
+                <li><strong>Customer:</strong> An individual using TandaPay's platform for various financial services like payments, transfers, and top-ups. Uses Tanda Pay App or <code>*712#</code>.</li>
+                <li><strong>Mobile Wallet:</strong> A digital wallet enabling users to store funds, make payments, and manage transactions via mobile devices. TandaPay's is "next-gen" and "interoperable."</li>
+                <li><strong>Till Number:</strong> A unique identifier assigned to TandaPay merchants allowing them to receive payments from customers. (Getting a TandaPay Till is free and instant).</li>
+                <li><strong>*USSD Code <code>(*712#)</code>:</strong> A shortcode dialed on mobile phones to access TandaPay services, especially for users without smartphones or app access.</li>
+                <li><strong>API (Application Programming Interface):</strong> A set of rules allowing different software applications to communicate. TandaPay offers robust APIs for easy integration by developers.</li>
+                <li><strong>Omnichannel Accessibility:</strong> Payments can be made/received across all mobile networks (e.g., Mpesa, Airtel, Telkom) and banks.</li>
+                <li><strong>Interoperability:</strong> The ability of TandaPay's system to work seamlessly with various mobile money networks and banking systems.</li>
+                <li><strong>Contract:</strong> A legally binding service agreement between TandaPay and its Merchants/Agents, outlining terms, services, fees, obligations (including KYC compliance), and termination conditions.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section 3: Client Engagement Scripts -->
+    <div class="main-section-container">
+        <div class="text-content" id="script">
+            <h1>3. Client Engagement Scripts</h1>
+            <p style="font-size: 15px; line-height: 1.6;">
+                TandaPay provides secure, fast, and interoperable mobile wallet solutions for businesses across industries. Below are tailored outreach scripts designed to demonstrate value to potential partners. These highlight key benefits and industry-specific use cases.
+            </p>
+
+            <h2 style="color: #ca2c54;">1. Gaming Companies</h2>
+            <p><strong>Objective:</strong> Help game developers simplify in-game payments and subscriptions.</p>
+            <ul style="list-style-type: disc; font-size: 15px; line-height: 1.8; padding-left: 20px;">
+                <li>Enable secure, frictionless in-game purchases and upgrades.</li>
+                <li>Support payments across all mobile networks and banks (omnichannel).</li>
+                <li>Easy API integration for developers.</li>
+                <li>24/7 reliable transaction support.</li>
+                <li>Proven results with companies like Twiga Foods.</li>
+            </ul>
+            <p><strong>Call to Action:</strong> Offer a free demo and schedule a meeting to explore integration.</p>
+
+            <h2 style="color: #ca2c54;">2. E-Commerce & Service Platforms</h2>
+            <p><strong>Example:</strong> Malaica (Maternity Care Services)</p>
+            <p><strong>Objective:</strong> Simplify fee collection and improve customer convenience.</p>
+            <ul style="list-style-type: disc; font-size: 15px; line-height: 1.8; padding-left: 20px;">
+                <li>Seamless payment collection for different service packages (antenatal, delivery, etc.).</li>
+                <li>Payments accepted from any mobile network.</li>
+                <li>High security and reliability for peace of mind.</li>
+                <li>Lower transaction costs for businesses.</li>
+            </ul>
+            <p><strong>Call to Action:</strong> Schedule a discussion to explore a tailored partnership.</p>
+
+            <h2 style="color: #ca2c54;">3. FMCG & Retail</h2>
+            <p><strong>Example:</strong> Jumia</p>
+            <p><strong>Objective:</strong> Streamline high-volume transactions and withdrawals.</p>
+            <ul style="list-style-type: disc; font-size: 15px; line-height: 1.8; padding-left: 20px;">
+                <li>Accept payments from MPesa, Airtel, and Telkom.</li>
+                <li>Withdraw funds easily to mobile wallets or bank accounts.</li>
+                <li>Real-time business dashboards for full visibility.</li>
+                <li>Robust API integration for flexible use.</li>
+            </ul>
+            <p><strong>Call to Action:</strong> Set up a conversation to optimize your payment flow with TandaPay.</p>
+
+            <h2 style="color: #ca2c54;">4. Licensed Fintechs</h2>
+            <p><strong>Objective:</strong> Support fintechs in delivering seamless customer experiences.</p>
+            <ul style="list-style-type: disc; font-size: 15px; line-height: 1.8; padding-left: 20px;">
+                <li>Interoperable wallet for cross-platform mobile money payments.</li>
+                <li>Real-time analytics, API access, and 24/7 support.</li>
+                <li>Proven growth results (e.g., Asante Financial saw a 2500% user increase).</li>
+                <li>Reliable infrastructure for scalability and performance.</li>
+            </ul>
+            <p><strong>Call to Action:</strong> Book a meeting or demo to align TandaPay with your platform needs.</p>
+            <h2 style="color: #ca2c54;">Client Retention & Performance Metrics</h2>
+            <p style="font-size: 15px; line-height: 1.8;">
+                 At TandaPay, we prioritize long-term partnerships. Our client retention strategy focuses on delivering measurable value through clear KPIs, reliable performance, and continuous support.
+            </p>
+
+            <h2 style="color: #ca2c54;">Conclusion</h2>
+            <p style="font-size: 15px; line-height: 1.8;">
+                Each script is designed to showcase TandaPay’s flexibility, reliability, and business value — whether you're in gaming, fintech, e-commerce, or service industries. Our mobile wallet platform not only simplifies payments but also empowers your business to grow confidently in a digital-first economy.
+            </p>
+        </div>
+        <div class="image-placeholder">
+             <img class="KPI" src="./images/23.jpg" alt="TandaPay KYC Process visual">
+            <p>May Target and KPI report 2025</p>
+            <img class="KPI" src="./images/24.jpg" alt="TandaPay KYC Process visual">
+            <p>Targets</p>
+            
+        </div>
+    </div>
+
+    <!-- Section 4: Contract -->
     <div class="main-section-container">
         <div class="text-content" id="contract">
-            <h1>2. Understanding Your TandaPay Agreement</h1>
+            <h1>4.Understanding Your Tandapay Agreement</h1>
             <h2 style="color: #ca2c54;">The Importance of Your Contract</h2>
             <p>Your TandaPay Merchant Contract is a legally binding agreement. It outlines the terms, conditions, and responsibilities for both TandaPay and your business. Reading and understanding it ensures a transparent and trusted partnership.</p>
             <h3 style="color: #ca2c54;">Key Sections in Your Agreement:</h3>
@@ -279,22 +379,20 @@
             <p><em>Understanding these agreements ensures a transparent and positive long-term relationship.</em></p>
         </div>
         <div class="image-placeholder">
-            <img src="./images/9.png" alt="">
+            <img src="./images/9.png" alt="Contract Page 1 Sample">
             <p><em>Page 1 Sign Form</em></p>
-            <img src="./images/7.png" alt="">
+            <img src="./images/7.png" alt="Contract Page 8 Sample">
             <p><em>Page 8 Sign Form</em></p>
-            <img src="./images/8.png" alt="">
+            <img src="./images/8.png" alt="Contract Page 10 Sample">
             <p><em>Page 10 Sign Form</em></p>
-
             <p><em>Where To Sign on Merchant contract</em></p>
-             <!-- Example: <img src="contract-sample.jpg" alt="Sample Contract Page"> -->
         </div>
     </div>
 
-    <!-- Section 3: Account Setup -->
+    <!-- Section 5: Account Setup -->
     <div class="main-section-container">
         <div class="text-content" id="account-setup">
-             <h1>3. Getting Started: Setting Up Your TandaPay Merchant Account</h1>
+             <h1>5. Compliance Essentials: KYC & AML Guidelines</h1>
             <h2 style="color: #40bbd1;">Let's Get You Connected!</h2>
             <p>Follow these simple steps to become a TandaPay Merchant and prepare for your first transaction. Have your business information ready.</p>
            <ol>
@@ -323,7 +421,62 @@
     <li><strong>Passport Photo or Selfie:</strong> A clear, recent photo.</li>
     <li><strong>(If a registered company):</strong> You might also need your Business Registration Certificate/Certificate of Incorporation, KRA PIN certificate, and proof of address.</li>
   </ul>
+  <h2 style="color: #40bbd1;">Anti-Money Laundering (AML) Guidelines</h2>
+<p>TandaPay is committed to protecting its platform from being used for money laundering, fraud, or illegal financial activities. As a registered agent, merchant, or team member, it is your responsibility to follow these guidelines strictly.</p>
 
+<h3 style="color: #40bbd1;">1. Why AML Matters</h3>
+<p>AML rules help prevent financial crimes like:</p>
+<ul style="list-style-type: disc;">
+    <li>Money laundering</li>
+    <li>Terrorist financing</li>
+    <li>Fraud and scams</li>
+</ul>
+<p>Following these rules ensures that TandaPay remains a safe and trusted platform.</p>
+
+<h3 style="color: #40bbd1;">2. Customer Verification (KYC)</h3>
+<ul style="list-style-type: disc;">
+    <li>Always verify the identity of customers using valid ID documents (e.g., National ID, Passport).</li>
+    <li>Collect and upload customer information as required in the agent portal.</li>
+    <li>Ensure that the information is stored securely and not shared.</li>
+</ul>
+
+<h3 style="color: #40bbd1;">3. Monitoring Transactions</h3>
+<p>Watch out for suspicious patterns, such as:</p>
+<ul style="list-style-type: disc;">
+    <li>Unusually large transactions</li>
+    <li>Repeated small transfers just below reporting limits</li>
+    <li>Transactions inconsistent with a customer’s profile</li>
+</ul>
+<p>Be alert to unusual behavior or requests that don’t make sense for regular business.</p>
+
+<h3 style="color: #40bbd1;">4. Reporting Suspicious Activity</h3>
+<ul style="list-style-type: disc;">
+    <li>Do not confront the customer.</li>
+    <li>Report immediately to TandaPay’s Compliance Team via the agent portal or support contact.</li>
+</ul>
+
+<h3 style="color: #40bbd1;">5. Prohibited Transactions</h3>
+<ul style="list-style-type: disc;">
+    <li>Criminal activity</li>
+    <li>Terrorism or extremist groups</li>
+    <li>Bribery or corruption</li>
+    <li>Fraudulent sources</li>
+</ul>
+
+<h3 style="color: #40bbd1;">6. Agent Responsibility</h3>
+<ul style="list-style-type: disc;">
+    <li>Complete AML training provided by TandaPay.</li>
+    <li>Keep accurate records of transactions.</li>
+    <li>Cooperate with audits or investigations if required.</li>
+    <li>Maintain customer confidentiality and data privacy at all times.</li>
+</ul>
+
+<h3 style="color: #40bbd1;">7. Penalties for Non-Compliance</h3>
+<ul style="list-style-type: disc;">
+    <li>Suspension or termination of your agent account</li>
+    <li>Legal action under applicable financial laws</li>
+    <li>Reporting to regulatory authorities</li>
+</ul>
   <h3 style="color: #40bbd1;">Company Requirements:</h3>
   <ul style="list-style-type: circle;">
     <li><strong>CR12 Form</strong></li>
@@ -360,18 +513,15 @@
             
         </div>
         <div class="image-placeholder">
-            <img src="./images/10.jpg" alt="USSD Code">
-            <img src="./images/1.jpg" alt="">
-            
-            <!-- Example: <img src="signup-step1.jpg" alt="Sign Up Screen 1"> -->
-            <!-- <img src="kyc-docs.jpg" alt="KYC Documents Example"> -->
+            <img src="./images/10.jpg" alt="USSD Code for TandaPay">   
+            <p>TandaPay USSD</p>
         </div>
     </div>
 
-    <!-- Section 4: Platform Walkthrough -->
+    <!-- Section 6: Platform Walkthrough -->
     <div class="main-section-container">
         <div class="text-content" id="platform-walkthrough">
-            <h1>4. Navigating TandaPay: Platform & App Walkthrough</h1>
+            <h1>6. Navigating TandaPay: Platform & App Walkthrough</h1>
             <h2 style="color: #ca2c54;">Your TandaPay Command Center</h2>
             <p>Familiarize yourself with the TandaPay merchant portal and mobile app. These are your tools for managing transactions, viewing reports, and configuring settings.</p>
             <h3 style="color: #ca2c54;">Accessing TandaPay (USSD & App)</h3>
@@ -422,46 +572,32 @@
             <p><em><strong>Action:</strong> Log in to your TandaPay App now and spend 15-20 minutes exploring these sections. If a web portal is available, explore that too.</em></p>
         </div>
         <div class="image-placeholder">
-            <img src="./images/10.jpg" alt="">
+            <img src="./images/10.jpg" alt="USSD Code on a phone">
             <p><em>USSD code</em></p>
-            <img src="./images/16.jpg" alt="">
+            <img src="./images/16.jpg" alt="TandaPay Till Payment Screen">
             <p><em>Payment via till (Buy goods and services)</em></p>
-            <img src="./images/22.jpg" alt="">
+            <img src="./images/22.jpg" alt="TandaPay PayBill Payment Screen">
             <p><em>Payment via PayBill</em></p>
-            
-
-            <p><em></em></p>
-            <!-- Example: <img src="app-dashboard.jpg" alt="TandaPay App Dashboard"> -->
         </div>
     </div>
 
-    <!-- Section 5: Go-To-Market Strategy -->
+    <!-- Section 7: Go-To-Market Strategy -->
     <div class="main-section-container">
         <div class="text-content" id="gtn-strategy">
-            <h1>5. Your Go-To-Market Strategy: Focusing on High-Value Zones</h1>
+            <h1>7. Your Go-To-Market Strategy: Focusing on High-Value Zones</h1>
             <h2 style="color: #40bbd1;">Maximizing Revenue with TandaPay</h2>
             <p>To maximize your revenue with TandaPay, we encourage focusing your efforts on areas with high business potential.</p>
             <h3 style="color: #40bbd1;">Why Focus on High-Traffic Areas?</h3>
             <ul style="list-style-type: disc;">
-                <li><strong>Increased Revenue:</strong> Malls, busy business districts, and affluent neighborhoods typically have a higher concentration of customers ready to make digital payments.</li>
                 <li><strong>Improved Merchant Performance:</strong> Businesses in these areas often have higher transaction volumes.</li>
                 <li><strong>Tech-Savvy Customers:</strong> Consumers in these locations are generally more inclined to adopt digital payment solutions for convenience and security.</li>
+                <li><strong>Increased Revenue:</strong>Higher sales and profits through improved transactions.</li>
             </ul>
-            <h3 style="color: #40bbd1;">Identifying Your Target Customers:</h3>
-            <p>TandaPay is ideal for various retailers, including:</p>
-            <ul style="list-style-type: disc;">
-                <li>Retail Dukas, Mini Marts, and Supermarkets</li>
-                <li>Chemists and Pharmacies</li>
-                <li>Barbershops and Salons</li>
-                <li>Cosmetics shops and Boutiques</li>
-                <li>Electronics shops</li>
-                <li>Hotels and Eateries</li>
-            </ul>
-            <p>Consider the daily trade volume:</p>
+            <p>consider the daily volume:</p>
             <ul style="list-style-type: circle;">
-                <li><strong>Tier 1:</strong> Serving over 250 customers daily (e.g., minimarts, wholesale shops in busy areas).</li>
-                <li><strong>Tier 2:</strong> Serving 100-250 customers daily (e.g., shops in apartment blocks, shopping centers).</li>
-                <li><strong>Tier 3:</strong> Serving less than 100 customers daily (e.g., small independent structures).</li>
+                <li><strong>Tier 1:</strong> Serving over 250 customers daily.</li>
+                <li><strong>Tier 2:</strong> Serving 100-250 customers daily.</li>
+                <li><strong>Tier 3:</strong> Serving less than 100 customers daily.</li>
             </ul>
             <p><em>Focusing on Tier 1 and Tier 2 in high-value locations can significantly boost your TandaPay transactions.</em></p>
             <h3 style="color: #40bbd1;">Key Strategies for Launch:</h3>
@@ -489,26 +625,25 @@
                     </ul>
                 </li>
             </ol>
-            <p><em><strong>Tip:</strong> Focus on making the TandaPay option clearly visible and easy for customers to choose.</em></p>
+           
         </div>
         <div class="image-placeholder">
-            <img src="./images/21-1.jpg" alt="">
+            <img src="./images/21-1.jpg" alt="STK Push example">
             <p><em>Pushing Payments To Clients</em></p>
-            <img src="./images/18.jpg" alt="">
+            <img src="./images/18.jpg" alt="Withdrawal screen example">
             <p><em>Withdrawing Funds</em></p>
-            
         </div>
     </div>
 
-    <!-- Section 6: Check-ins & Training -->
+    <!-- Section 8: Check-ins & Training -->
     <div class="main-section-container">
         <div class="text-content" id="checkins-training">
-            <h1>6. Stay Ahead: Weekly Check-ins & Training</h1>
+            <h1>8. Stay Ahead: Weekly Check-ins & Training</h1>
             <h2 style="color: #ca2c54;">Continuous Support for Your Success</h2>
             <p>We are committed to your success and provide regular opportunities for learning and feedback.</p>
             <h3 style="color: #ca2c54;">Weekly Merchant Check-ins:</h3>
             <ul style="list-style-type: disc;">
-                <li><strong>When:</strong> Every Wednesday, 9:00 AM – 10:00 AM.</li>
+                <li><strong>When:</strong> This event takes place on a monthly basis.</li>
                 <li><strong>Purpose:</strong> A touchpoint for you to:
                     <ul style="list-style-type: circle;">
                         <li>Discuss your performance metrics (transaction volume, customer adoption).</li>
@@ -520,7 +655,7 @@
             </ul>
             <h3 style="color: #ca2c54;">Weekly Product Training Sessions:</h3>
             <ul style="list-style-type: disc;">
-                <li><strong>When:</strong> Every Friday, 11:00 AM – 1:00 PM .</li>
+                <li><strong>When:</strong> These sessions are scheduled to occur once per month</li>
                 <li><strong>Purpose:</strong> To ensure you and your staff are well-equipped to use TandaPay effectively. Sessions cover:
                     <ul style="list-style-type: circle;">
                         <li><strong>New Product Features:</strong> Updates, tools, and new offerings.</li>
@@ -535,17 +670,15 @@
             <p><em>Make the most of these resources to become a TandaPay expert!</em></p>
         </div>
         <div class="image-placeholder">
-            <img src="./images/17.jpg" alt="">
+            <img src="./images/17.jpg" alt="Transaction history screen">
             <p><em>Checking Your Transaction</em></p>
-            
-            <p><em></em></p>
         </div>
     </div>
 
-    <!-- Section 7: Customer Engagement -->
+    <!-- Section 9: Customer Engagement -->
     <div class="main-section-container">
         <div class="text-content" id="customer-engagement">
-            <h1>7. Engaging Your Customers with TandaPay</h1>
+            <h1>9. Engaging Your Customers with TandaPay</h1>
             <h2 style="color: #40bbd1;">Encouraging TandaPay Adoption</h2>
             <p>Helping your customers understand and use TandaPay will increase adoption and make transactions smoother.</p>
             <h3 style="color: #40bbd1;">1. Educating Your Customers:</h3>
@@ -572,15 +705,15 @@
             <p><em>By actively promoting TandaPay and its benefits, you can significantly increase its usage among your customer base.</em></p>
         </div>
         <div class="image-placeholder">
-            <img src="./images/19.jpg" alt="">
+            <img src="./images/19.jpg" alt="Payment options screen">
             <p><em>Choose Your Method of Payment</em></p>
         </div>
     </div>
 
-    <!-- Section 8: Performance Tracking -->
+    <!-- Section 10: Performance Tracking -->
     <div class="main-section-container">
         <div class="text-content" id="performance-tracking">
-            <h1>8. Tracking Your Success: Performance & Reporting</h1>
+            <h1>10. Tracking Your Success: Performance & Reporting</h1>
             <h2 style="color: #ca2c54;">Measure, Analyze, Optimize</h2>
             <p>TandaPay provides tools to help you monitor your business performance, identify trends, and make informed business decisions.</p>
             <h3 style="color: #ca2c54;">Using Your TandaPay Dashboard:</h3>
@@ -609,15 +742,15 @@
             <p><em>Regularly reviewing your TandaPay performance data is key to optimizing its benefits. This information helps you understand customer behavior and optimize your operations. Your Account Manager can also help you interpret these reports.</em></p>
         </div>
         <div class="image-placeholder">
-            <img src="./images/20.jpg" alt="">
+            <img src="./images/20.jpg" alt="TandaPay App homepage/dashboard">
             <p><em>TandaApp Homepage</em></p>
         </div>
     </div>
 
-    <!-- Section 9: Support & Feedback -->
+    <!-- Section 11: Support & Feedback -->
     <div class="main-section-container">
         <div class="text-content" id="support-feedback">
-            <h1>9. We're Here to Help: Support & Feedback</h1>
+            <h1>11. We're Here to Help: Support & Feedback</h1>
             <h2 style="color: #40bbd1;">We're Here to Help! (24/7)</h2>
             <p>Your success is our priority. TandaPay offers multiple channels for support and welcomes your valuable feedback to help us improve our services.</p>
             <h3 style="color: #40bbd1;">Accessing Support Channels:</h3>
@@ -668,10 +801,11 @@
             <p>Thank you for choosing TandaPay! We look forward to helping your business thrive.</p>
         </div>
         <div class="image-placeholder">
-            <img src="./images/5.jpg" alt="">
-            <p><em>TandaPay is Here To Help You And Your Clients Make Payments Easy And Seamless</em></p>
+            <img src="./images/12.jpg" alt="TandaPay support concept image">
+            <p><em>Your Success is Our Priority</em></p>
         </div>
     </div>
+   
 
 </body>
 </html>
